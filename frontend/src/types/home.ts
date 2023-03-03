@@ -1,4 +1,4 @@
-interface BoxProps {
+export interface BoxProps {
     image: string,
     text: string
 }
@@ -11,7 +11,7 @@ export interface NewsBoxProps extends BoxProps {
     date: Date
 }
 
-export interface EventBoxProps extends BoxProps {
+export interface PlaceBoxProps extends BoxProps {
     phone: string,
     email: string
 }
