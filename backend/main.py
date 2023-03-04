@@ -42,7 +42,6 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = 
 @app.get("/")
 @app.get("/login")
 @app.get("/signup")
-@app.get("/admin")
 async def urls(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
