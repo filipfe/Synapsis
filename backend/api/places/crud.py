@@ -1,6 +1,6 @@
 from fastapi import HTTPException, UploadFile
 from sqlalchemy.orm import Session
-from cloudinary.uploader import upload
+from cloudinary.uploader import upload, destroy
 
 from db.models import Place
 
@@ -35,7 +35,10 @@ def get_places(db: Session):
 
 
 def delete_place(db: Session, place_id: int):
-    db.query(Place).filter_by(id=place_id).delete()
+    db_place = db.query(Place).filter_by(id=place_id)
+    public_id = db_place.first().image.split("/")[-1].split(".")[0]
+    destroy("Synapsis/Places/" + public_id)
+    db_place.delete()
     db.commit()
     raise HTTPException(status_code=204)
 

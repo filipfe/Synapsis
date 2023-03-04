@@ -1,6 +1,6 @@
 from fastapi import HTTPException, UploadFile
 from sqlalchemy.orm import Session
-from cloudinary.uploader import upload
+from cloudinary.uploader import upload, destroy
 
 from db.models import Event
 
@@ -33,7 +33,10 @@ def get_events(db: Session):
 
 
 def delete_event(db: Session, event_id: int):
-    db.query(Event).filter_by(id=event_id).delete()
+    db_event = db.query(Event).filter_by(id=event_id)
+    public_id = db_event.first().image.split("/")[-1].split(".")[0]
+    destroy("Synapsis/Events/" + public_id)
+    db_event.delete()
     db.commit()
     raise HTTPException(status_code=204)
 

@@ -53,6 +53,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = 
 
 @app.get("/")
 @app.get("/aktualnosci")
+@app.get("/kontakt")
 @app.get("/autyzm")
 @app.get("/autyzm/definicja")
 @app.get("/autyzm/objawy")
