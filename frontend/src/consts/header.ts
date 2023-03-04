@@ -37,7 +37,7 @@ export const navLinks: NavLinkProps[] = [
                     },
                     {
                         title: 'WYSTĘPOWANIE',
-                        to: '/autyzm/występowanie',
+                        to: '/autyzm/wystepowanie',
                         subLinks: []
                     }
                 ]
