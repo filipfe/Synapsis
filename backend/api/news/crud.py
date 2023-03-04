@@ -22,7 +22,10 @@ def get_news(db: Session):
 
 
 def delete_new(db: Session, new_id: int):
-    db.query(New).filter_by(id=new_id).delete()
+    db_new = db.query(New).filter_by(id=new_id)
+    if not db_new.first():
+        raise HTTPException(status_code=204)
+    db_new.delete()
     db.commit()
-    raise HTTPException(status_code=204)
+    raise HTTPException(status_code=204, detail="deleted")
 

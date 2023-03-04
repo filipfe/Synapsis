@@ -1,11 +1,11 @@
 from pydantic import BaseModel
-from datetime import date
+from datetime import datetime
 
 
 class News(BaseModel):
     title: str
     desc: str
-    date: date
+    date: datetime
 
     class Config:
         orm_mode = True

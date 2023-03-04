@@ -34,9 +34,11 @@ def get_events(db: Session):
 
 def delete_event(db: Session, event_id: int):
     db_event = db.query(Event).filter_by(id=event_id)
+    if not db_event.first():
+        raise HTTPException(status_code=204)
     public_id = db_event.first().image.split("/")[-1].split(".")[0]
     destroy("Synapsis/Events/" + public_id)
     db_event.delete()
     db.commit()
-    raise HTTPException(status_code=204)
+    raise HTTPException(status_code=204, detail="deleted")
 
