@@ -45,7 +45,7 @@ const NewsBox = ({ image, date, text }: NewsBoxProps) => {
       <img className="w-full object-cover h-[2in]" src={image} alt="" />
       <div className="p-4 bg-primary">
         <p>{text}</p>
-        <small>{date.toISOString()}</small>
+        <small>{date.toDateString()}</small>
       </div>
     </div>
   );
