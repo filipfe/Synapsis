@@ -14,10 +14,11 @@ export default function RealizedProject() {
             useEasing
             enableScrollSpy
             end={498}
-          />{" "}
+          />
+          <br className="md:hidden" />
           ZREALIZOWANYCH PROJEKTÓW...
         </h2>
-        <p className="text-[#3A3A3A] open-sans max-w-[50%] text-sm">
+        <p className="text-[#3A3A3A] open-sans md:max-w-[50%] text-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh dictum
           leo aliquam ipsum. Metus, bibendum felis blandit tincidunt. Tristique
           odio scelerisque massa

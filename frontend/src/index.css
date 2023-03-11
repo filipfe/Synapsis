@@ -24,6 +24,11 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 html, body {
   scroll-behavior: smooth;
 }
@@ -37,6 +42,11 @@ body {
   padding-right: 8vw;
 }
 
+p {
+  line-height: 1.8em;
+  font-family: 'Open Sans';
+}
+
 @media all and (min-width: 768px) {
   .padding {
     padding-left: 12vw;
@@ -46,7 +56,7 @@ body {
 
 @media all and (min-width: 1536px) {
   .padding {
-    padding-left: 16vw;
-    padding-right: 16vw;
+    padding-left: 18vw;
+    padding-right: 18vw;
   }
 }

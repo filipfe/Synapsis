@@ -8,6 +8,8 @@ export interface YellowBoxProps extends BoxProps {
 }
 
 export interface NewsBoxProps extends BoxProps {
+    title: string,
+    desc: string,
     date: Date
 }
 

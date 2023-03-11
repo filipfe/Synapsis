@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useResolvedPath, useMatch, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import { useEffect, useState } from "react";
 import { logo } from "../../assets/general";
 import NavLink from "./components/NavLink";
@@ -21,7 +21,12 @@ export default function Header() {
       className={`fixed left-0 right-0 z-30 top-0 transition-all bg-white `}
     >
       <div className="2xl:px-[18vw] px-[8vw] md:px-[2vw] bg-primary flex items-center justify-center sm:justify-end gap-4 py-3">
-        <Link className="py-3 px-6 text-white rounded-full open-sans font-bold bg-[#1A356D] text-sm" to='/'>PRZEKAŻ DAROWIZNĘ</Link>
+        <Link
+          className="py-3 px-6 text-white rounded-full open-sans font-bold bg-[#1A356D] text-sm"
+          to="/"
+        >
+          PRZEKAŻ DAROWIZNĘ
+        </Link>
         <button>PL</button>
         <button>ENG</button>
       </div>
@@ -56,7 +61,7 @@ const Nav = () => {
   return (
     <>
       <div
-        className={`flex flex-col md:flex-row justify-center items-stretch md:self-stretch bg-white gap-8 text-sm font-medium absolute top-0 md:relative left-full transition-transform ${
+        className={`flex flex-col md:flex-row flex-wrap justify-center items-center md:items-stretch md:self-stretch bg-white gap-8 text-sm font-medium absolute top-0 md:relative left-full transition-transform ${
           active && "-translate-x-full"
         } md:left-auto h-screen md:h-auto w-screen md:w-max`}
       >
@@ -66,7 +71,7 @@ const Nav = () => {
       </div>
       <div
         onClick={() => setActive((prev) => !prev)}
-        className="burger flex flex-col relative z-50 md:hidden h-5 w-8 justify-between cursor-pointer"
+        className="burger my-auto flex flex-col relative z-50 md:hidden h-5 w-8 justify-between cursor-pointer"
       >
         <div
           style={

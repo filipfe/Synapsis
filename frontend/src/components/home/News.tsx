@@ -39,13 +39,22 @@ export default function News() {
   );
 }
 
-const NewsBox = ({ image, date, text }: NewsBoxProps) => {
+const NewsBox = ({ image, date, title, desc }: NewsBoxProps) => {
+  const dateObject = new Date(date);
+  const dateString = dateObject.toLocaleDateString("pl-PL", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
   return (
     <div className="border-primary border-[1px] flex flex-col rounded">
       <img className="w-full object-cover h-[2in]" src={image} alt="" />
-      <div className="p-4 bg-primary">
-        <p>{text}</p>
-        <small>{String(date)}</small>
+      <div className="p-4 bg-primary flex flex-col gap-6">
+        <h3 className="font-semibold open-sans text-xl">
+          {title.toUpperCase()}
+        </h3>
+        <small>{dateString}</small>
       </div>
     </div>
   );
